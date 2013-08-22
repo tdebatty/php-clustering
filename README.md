@@ -8,6 +8,7 @@ Usage
 
 ```php
 use \webd\clustering\KMeans;
+use \webd\clustering\GMeans;
 use \webd\clustering\RnPoint;
 
 // These examples use points in Rn, but some algorithms (like KMeans)
