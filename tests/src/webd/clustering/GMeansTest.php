@@ -30,7 +30,6 @@ class GMeansTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers webd\clustering\GMeans::run
-     * @todo   Implement testRun().
      */
     public function testRun() {
         $nd = new \webd\stats\NormalDistribution();
@@ -44,6 +43,29 @@ class GMeansTest extends \PHPUnit_Framework_TestCase {
         $gmeans = new GMeans();
         $gmeans->points = $points;
         $gmeans->run();
+    }
+    
+    /**
+     * @covers webd\clustering\GMeans::run
+     */
+    public function testRun2() {
+        $nd1 = new \webd\stats\NormalDistribution(9, 0.1);
+        $nd2 = new \webd\stats\NormalDistribution(9, 0.4);
+
+        $points = array();
+        for ($i = 0; $i < 100; $i++) {
+            $points[] = new RnPoint($nd1->sample(), $nd2->sample());
+        }
+
+        $gmeans = new GMeans();
+        $gmeans->points = $points;
+        $gmeans->run();
+        
+        $this->assertEquals(
+                array(9, 9),
+                $gmeans->centers_found[0]->getValue(),
+                "",
+                0.5);
     }
 
 }
