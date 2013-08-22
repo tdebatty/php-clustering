@@ -1,6 +1,13 @@
 <?php
 namespace webd\clustering;
 
+/**
+ * GMeans algorithm
+ * (only supports points in Rn)
+ * Based on the papaer by Greg Hamerly and Charles Elkan
+ * "Learning the k in k-means"
+ * http://machinelearning.wustl.edu/mlpapers/paper_files/NIPS2003_AA36.pdf
+ */
 class GMeans
 {
     /**

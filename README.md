@@ -41,4 +41,5 @@ for ($i = 0; $i < 100; $i++) {
 $gmeans = new GMeans();
 $gmeans->points = $points;
 $gmeans->run();
+var_dump($gmeans->found_centers);
 ```
