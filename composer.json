@@ -1,0 +1,11 @@
+{
+    "name": "webd/clustering",
+    "description": "Clustering algorithms",
+    "minimum-stability" : "dev",
+    "require":      {
+        "webd/vectors":   "dev-master"
+    },
+    "autoload": {
+        "psr-0": {"": "src/"}
+    }
+}
