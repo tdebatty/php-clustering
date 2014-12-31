@@ -81,7 +81,7 @@ class KMeans
         foreach ($this->centers as $key => $center) {
             try {
                 $center->computeNewValue();
-            } catch (Exception $exc) {
+            } catch (\Exception $exc) {
                 unset($this->centers[$key]);
             }
         }
